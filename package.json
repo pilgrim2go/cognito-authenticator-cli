@@ -1,0 +1,30 @@
+{
+  "name": "cognito-authenticator-cli",
+  "version": "1.0.0",
+  "description": "Retrieves AWS Access Key from Cognito Username/Password as a CLI-capable javascript tool ",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polyverse-security/cognito-authenticator-cli.git"
+  },
+  "keywords": [
+    "Cognito",
+    "Identity",
+    "Amazon",
+    "User",
+    "Pools",
+    "Authentication",
+    "Client",
+    "AWS",
+    "Credentials"
+  ],
+  "author": "Archis Gore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/polyverse-security/cognito-authenticator-cli/issues"
+  },
+  "homepage": "https://github.com/polyverse-security/cognito-authenticator-cli#readme"
+}
