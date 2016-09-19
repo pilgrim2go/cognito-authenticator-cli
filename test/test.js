@@ -16,7 +16,7 @@ var params = {
     Password: 'C4$j1%f1#f4*S5&I1@b7$b1~Q6(C7%f3*G4`d1`C3&l4(j1[b3#',
     UserPoolId: 'us-east-1_QY61qoJbZ',
     ClientId: '6a2ae7i6mvd9u6bt9hvpa9c8i2',
-    IdentityPoolId: 'us-east-1:07e91600-b6bc-41e9-a07e-1de3b9d2bdfd',
+    IdentityPoolId: 'us-east-1:95219c8a-4ad1-41ca-80fe-669764b389cf',
     AWSRegion: 'us-east-1'
 }
 
