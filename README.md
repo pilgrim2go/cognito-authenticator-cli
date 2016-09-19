@@ -3,7 +3,7 @@
 Retrieves AWS Access Key from Cognito Username/Password as a CLI-capable javascript tool.
 
 ## Node.js Usage:
-'''
+`
 var cognito = require('cognito-authenticator-cli');
 var params = {
     Username: 'Heroku-Addon-User-01234567-89ab-cdef-0123-456789abcdef',
@@ -23,7 +23,7 @@ function callback(err, creds) {
       console.log(creds.SessionToken);
     }
 }
-'''
+`
 
 ## CLI USage:
 This feature is coming soon. The CLI usage is intended to allow non-Node apps to call this 
