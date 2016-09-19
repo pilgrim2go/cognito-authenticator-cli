@@ -58,7 +58,7 @@ cognito.getAWSAccessCredentialsForCognitoUser(params, function(err, creds) {
     
           var S3 = new AWS.S3();
           S3.listObjects({
-              Bucket: response.config.POLYVERSESCRAMBLEDBINARYACCESS_S3_BUCKET,
+              Bucket: process.env['POLYVERSESCRAMBLEDBINARYACCESS_S3_BUCKET'],
           },
           function(err, objects) {
               if (err) {
