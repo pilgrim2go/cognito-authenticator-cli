@@ -23,14 +23,14 @@ function callback(err, creds) {
       console.log(creds.SessionToken);
     }
 }
+
+cognito.getAWSAccessCredentialsForCognitoUser(params, callback);
+
 ```
 
 ## CLI Usage:
 This feature is coming soon. The CLI usage is intended to allow non-Node apps to call this 
 package over the shell and acquire credentials to AWS.
-
-cognito.getAWSAccessCredentialsForCognitoUser(params, callback);
-
 
 
 ## What problem does this solve?
