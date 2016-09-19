@@ -26,5 +26,11 @@
   "bugs": {
     "url": "https://github.com/polyverse-security/cognito-authenticator-cli/issues"
   },
-  "homepage": "https://github.com/polyverse-security/cognito-authenticator-cli#readme"
+  "homepage": "https://github.com/polyverse-security/cognito-authenticator-cli#readme",
+  "dependencies": {
+    "amazon-cognito-identity-js": "^1.2.0",
+    "aws-sdk": "^2.6.3",
+    "jsbn": "^0.1.0",
+    "sjcl": "^1.0.6"
+  }
 }
