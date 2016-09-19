@@ -1,6 +1,6 @@
 
-var pathToProject = "./";
-var AWSCognito = require(pathToProject + 'amazon-cognito-identity-js/index');
+var AWSCognito = require('amazon-cognito-identity-js');
+var MockBrowser = require('mock-browser').mocks.MockBrowser;
 
 /*
     This function retrieves AWS access credentials for a given
@@ -26,7 +26,7 @@ var AWSCognito = require(pathToProject + 'amazon-cognito-identity-js/index');
     }
 */
 exports.getAWSAccessCredentialsForCognitoUser = function(params, callback) {
-
+        global.window = MockBrowser.createWindow();;
         var authenticationData = {
             Username : params.Username,
             Password : params.Password,
