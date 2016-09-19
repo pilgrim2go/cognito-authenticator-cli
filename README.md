@@ -2,7 +2,13 @@
 
 Retrieves AWS Access Key from Cognito Username/Password as a CLI-capable javascript tool.
 
-## Node.js Usage:
+## Installing using NPM
+
+```
+npm install --save cognito-authenticator-cli
+```
+
+## Node.js Usage for any Cognito User Pool + Identity Pool:
 ```
 var cognito = require('cognito-authenticator-cli');
 var params = {
@@ -21,6 +27,37 @@ function callback(err, creds) {
       console.log(creds.AccessKeyId);
       console.log(creds.SecretAccessKey);
       console.log(creds.SessionToken);
+    }
+}
+
+cognito.getAWSAccessCredentialsForCognitoUser(params, callback);
+
+```
+
+## Usage with the [Polyverse Scrambled Binary Access Heroku Addon](https://elements.heroku.com/addons/polyversescrambledbinaryaccess)
+
+```
+var cognito = require('cognito-authenticator-cli');
+var AWS = require('aws-sdk');
+
+var params = {
+    Username: process.env['POLYVERSESCRAMBLEDBINARYACCESS_COGNITO_USERNAME'],
+    Password: process.env['POLYVERSESCRAMBLEDBINARYACCESS_COGNITO_PASSWORD'],
+    UserPoolId: process.env['POLYVERSESCRAMBLEDBINARYACCESS_COGNITO_USER_POOL_ID'],
+    ClientId: process.env['POLYVERSESCRAMBLEDBINARYACCESS_COGNITO_CLIENT_ID'],
+    IdentityPoolId: process.env['POLYVERSESCRAMBLEDBINARYACCESS_COGNITO_IDENTITY_POOL_ID'],
+    AWSRegion: process.env['POLYVERSESCRAMBLEDBINARYACCESS_COGNITO_REGION']
+}
+
+function callback(err, creds) {
+    if (err) {
+      console.log(err);
+    } else {
+        AWS.config.update({accessKeyId: creds.AccessKeyId, secretAccessKey: creds.SecretAccessKey, sessionToken: creds.SessionToken});
+        
+        var S3 = new AWS.S3();
+        
+        //Do S3 stuff here
     }
 }
 
