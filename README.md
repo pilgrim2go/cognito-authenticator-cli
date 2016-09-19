@@ -25,7 +25,7 @@ function callback(err, creds) {
 }
 ```
 
-## CLI USage:
+## CLI Usage:
 This feature is coming soon. The CLI usage is intended to allow non-Node apps to call this 
 package over the shell and acquire credentials to AWS.
 
