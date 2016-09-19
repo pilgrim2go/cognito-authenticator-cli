@@ -49,19 +49,27 @@ var params = {
     AWSRegion: process.env['POLYVERSESCRAMBLEDBINARYACCESS_COGNITO_REGION']
 }
 
-function callback(err, creds) {
-    if (err) {
-      console.log(err);
-    } else {
-        AWS.config.update({accessKeyId: creds.AccessKeyId, secretAccessKey: creds.SecretAccessKey, sessionToken: creds.SessionToken});
-        
-        var S3 = new AWS.S3();
-        
-        //Do S3 stuff here
-    }
-}
-
-cognito.getAWSAccessCredentialsForCognitoUser(params, callback);
+cognito.getAWSAccessCredentialsForCognitoUser(params, function(err, creds) {
+      if (err) {
+        console.log(err);
+      } else {
+          //update AWS creds
+          AWS.config.update({accessKeyId: creds.AccessKeyId, secretAccessKey: creds.SecretAccessKey, sessionToken: creds.SessionToken});
+    
+          var S3 = new AWS.S3();
+          S3.listObjects({
+              Bucket: response.config.POLYVERSESCRAMBLEDBINARYACCESS_S3_BUCKET,
+          },
+          function(err, objects) {
+              if (err) {
+                  console.log(err);
+              } else {
+                  console.log(objects);
+              }
+    
+          })
+      }
+});
 
 ```
 
